@@ -6,6 +6,9 @@ import { fetchQuizQuestions } from './API';
 //types
 import { QuestionsState,Difficulty } from './API';
 
+// Styles
+import { GlobalStyle, Wrapper } from './App.styles';
+
 export type AnswerObject = {
   question: string;
   answer: string;
@@ -58,7 +61,14 @@ const App =() => {
   };
 
 const nextQuestion = () => {
+  const nextQuestion = number + 1;
 
+  if (nextQuestion === TOTAL_QUESTIONS){
+    setGameOver(true)
+
+  } else {
+    setNumber(nextQuestion);
+  }
 }
 
 return (
